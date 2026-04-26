@@ -36,9 +36,9 @@ tags:
 
 ## 🛠️ Skill globali — stato eval (cadenza settimanale)
 <!-- da ~/.claude/evals/ — capture leggera: skill modificate questa settimana + check uscita nuovo modello -->
-- Skill modificate (find -mtime -7): 
-- Nuovo modello Claude questa settimana: 
-- Re-eval da pianificare: 
+- Skill modificate (find -mtime -7): `session-start-hook`
+- Nuovo modello Claude questa settimana: no
+- Re-eval da pianificare: batch notturno già schedulato (12 skill cluster A, config 5/3) — verificare risultati in `~/.claude/evals/reports/_batch-20260427-0200/summary.md` 
 
 ## ⏭️ Prossima settimana
 - [ ] Priorità 1
