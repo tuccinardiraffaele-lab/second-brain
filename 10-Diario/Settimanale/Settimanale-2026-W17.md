@@ -41,6 +41,6 @@ tags:
 - Re-eval da pianificare: batch notturno già schedulato (12 skill cluster A, config 5/3) — verificare risultati in `~/.claude/evals/reports/_batch-20260427-0200/summary.md` 
 
 ## ⏭️ Prossima settimana
-- [ ] Priorità 1
-- [ ] Priorità 2
-- [ ] Priorità 3
+- [ ] **Scaffold AIOS** — collegamento con second brain principale per sbloccare Phase 10
+- [ ] **Intervista esperto GBSoftware** (2026-05-01) — dominio di processo per integrazione
+- [ ] **2ª intervista padre** — pianificare (02/05) + eseguire (03/05): bus-factor, cliente fuori standard, quadratura
