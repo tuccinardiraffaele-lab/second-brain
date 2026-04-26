@@ -12,7 +12,7 @@ tags:
 - **[[Football-Trading]] debug completato** — sistema completamente autonomo in paper trading, può girare senza presidio. Libera focus per [[Sistema-Agentico-Studio]] 
 
 ## 🧱 Ostacoli
-- 
+- **Tempo eroso dal lavoro corporate [[Angelini-Pharma]]** — nessun blocco specifico, ma carico di lavoro elevato ha ridotto slot disponibili per i progetti personali 
 
 ## 💡 Insight
 - 
