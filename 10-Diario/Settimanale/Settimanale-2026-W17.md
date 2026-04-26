@@ -26,13 +26,13 @@ tags:
 
 ## 🏛️ Review pillar (cadenza settimanale)
 <!-- da [[Pillar-Doppio-Livello]] + [[Processo-Review-Cadence]] L1 — capture superficiale: evidenze attività + loss catturate -->
-- [[Strategia-Pillar-Leadership-Strategica]]: 
-- [[Vendite-Pillar-Governance-Reputazionale]]: 
-- [[Prodotto-Pillar-Delivery-Piloti]]: 
-- [[Crescita-Pillar-Studio-Giuridico]]: 
-- [[Relazioni-Pillar-Network-Target]]: 
-- [[Vendite-Pillar-Sales-Positioning]]: 
-- [[Strategia-Pillar-Monitoraggio-Regolatorio]]: 
+- [[Strategia-Pillar-Leadership-Strategica]]: Foundation chiuso (7/7 + mappa + 3 sistemi canonici), HC-F4 chiusa con 5gg anticipo — loss: nessuna
+- [[Vendite-Pillar-Governance-Reputazionale]]: no evidenza diretta — loss: nessuna
+- [[Prodotto-Pillar-Delivery-Piloti]]: split MOC AIOS/FT in 16 note atomiche, FT debug chiuso — loss: nessuna
+- [[Crescita-Pillar-Studio-Giuridico]]: presidio quotidiano mantenuto — loss: nessuna
+- [[Relazioni-Pillar-Network-Target]]: Mappa Network Bootstrap chiusa con 5gg anticipo — loss: nessuna
+- [[Vendite-Pillar-Sales-Positioning]]: pillar Foundation completato — loss: nessuna
+- [[Strategia-Pillar-Monitoraggio-Regolatorio]]: pillar Foundation completato — loss: nessuna 
 
 ## 🛠️ Skill globali — stato eval (cadenza settimanale)
 <!-- da ~/.claude/evals/ — capture leggera: skill modificate questa settimana + check uscita nuovo modello -->
