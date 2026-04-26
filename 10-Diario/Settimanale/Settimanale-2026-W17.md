@@ -15,7 +15,7 @@ tags:
 - **Tempo eroso dal lavoro corporate [[Angelini-Pharma]]** — nessun blocco specifico, ma carico di lavoro elevato ha ridotto slot disponibili per i progetti personali 
 
 ## 💡 Insight
-- 
+- **SOTA check pre-implementazione** — prima di partire con modello o agente, verificare stato dell'arte e best practices. Altrimenti si paga l'allineamento al SOTA post-delivery (rework evitabile) 
 
 ## 🎯 Stato OKR e Priorità
 - Rispetto a [[OKR-Correnti]]: 
