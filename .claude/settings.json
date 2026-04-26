@@ -1,0 +1,27 @@
+{
+    "hooks": {
+        "PostToolUse": [
+            {
+                "matcher": "Write|Edit",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "INPUT=$(cat); FP=$(echo \"$INPUT\" | jq -r '.tool_input.file_path // empty'); if echo \"$FP\" | grep -qE '\\.md$'; then echo '{\"systemMessage\": \"📝 Nota vault aggiornata\"}'; fi",
+                        "timeout": 5
+                    }
+                ]
+            }
+        ]
+    },
+    "permissions": {
+        "defaultMode": "bypassPermissions",
+        "allow": [
+            "Read(~/Second-Brain/**)",
+            "Write(~/Second-Brain/**)",
+            "Edit(~/Second-Brain/**)",
+            "Glob",
+            "Grep",
+            "Skill(*)"
+        ]
+    }
+}

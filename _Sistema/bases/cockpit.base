@@ -1,0 +1,40 @@
+filters:
+  or:
+    - and:
+        - file.inFolder("10-Diario")
+        - 'file.basename == today().format("YYYY-MM-DD")'
+    - and:
+        - 'tipo == "progetto"'
+        - 'stato == "attivo"'
+
+formulas:
+  giorno: 'today().format("dddd DD MMMM YYYY")'
+
+properties:
+  prossima_azione:
+    displayName: "Prossima azione"
+  blocco:
+    displayName: "Blocco"
+  aggiornato:
+    displayName: "Aggiornato"
+
+views:
+  - type: list
+    name: "Nota di oggi"
+    filters:
+      and:
+        - file.inFolder("10-Diario")
+    order:
+      - file.name
+
+  - type: table
+    name: "Progetti attivi — prossime azioni"
+    filters:
+      and:
+        - 'tipo == "progetto"'
+        - 'stato == "attivo"'
+    order:
+      - file.name
+      - prossima_azione
+      - blocco
+      - aggiornato

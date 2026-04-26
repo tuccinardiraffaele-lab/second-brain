@@ -1,0 +1,32 @@
+filters:
+  and:
+    - tipo == "kr"
+    - stato == "attivo"
+formulas:
+  avanzamento: if(progresso != null, progresso + "%", "—")
+  barra: if(progresso >= 100, "████████████", if(progresso >= 75, "█████████░░░", if(progresso >= 50, "██████░░░░░░", if(progresso >= 25, "███░░░░░░░░░", "░░░░░░░░░░░░"))))
+properties:
+  okr_parent:
+    displayName: OKR
+  formula.barra:
+    displayName: Progresso
+  formula.avanzamento:
+    displayName: "%"
+  scadenza:
+    displayName: Scadenza
+views:
+  - type: table
+    name: KR del trimestre
+    groupBy:
+      property: okr_parent
+      direction: ASC
+    order:
+      - file.name
+      - formula.barra
+      - formula.avanzamento
+      - scadenza
+    sort:
+      - property: scadenza
+        direction: ASC
+    summaries:
+      progresso: Average

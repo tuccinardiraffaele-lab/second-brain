@@ -1,0 +1,15 @@
+# Obsidian — stato macchina-specifico
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+
+# Claude Code — settings locali (non versionare)
+.claude/settings.local.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp
+*.tmp
+*.bak

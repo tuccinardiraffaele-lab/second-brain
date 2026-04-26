@@ -1,0 +1,28 @@
+filters:
+  and:
+    - tipo == "filone"
+formulas:
+  salute_icona: if(salute == "verde", "● Verde", if(salute == "giallo", "▲ Giallo", if(salute == "rosso", "✕ Rosso", "○ —")))
+properties:
+  salute:
+    displayName: Salute (raw)
+  formula.salute_icona:
+    displayName: Salute
+  stato:
+    displayName: Stato
+  prossima_azione:
+    displayName: Prossima azione
+  scadenza:
+    displayName: Scadenza
+views:
+  - type: table
+    name: Filoni strategici
+    order:
+      - file.name
+      - formula.salute_icona
+      - stato
+      - prossima_azione
+      - scadenza
+    sort:
+      - property: formula.salute_icona
+        direction: ASC
