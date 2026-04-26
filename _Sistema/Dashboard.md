@@ -1,7 +1,7 @@
 ---
 tipo: mappa
 creato: 2026-04-13
-aggiornato: 2026-04-20
+aggiornato: 2026-04-26
 stato: attivo
 tags:
   - sistema/dashboard
@@ -35,6 +35,7 @@ area: strumenti
 > - **Mappa concreta pillar↔sistemi**: scritta il 2026-04-25 in [[Strategia-Mappa-Pillar-Sistemi]] via architettura multi-agent (5 research consulenziali + 3 explore vault → fact-check Opus → deliberation room 5 voce + moderatore Opus). 19 sistemi su 7 pillar (saliti a 19+1=20 con CRI esplicitato), test MECE 3 gate superato
 > - **HC-F4 chiusa il 2026-04-25** con 5gg di anticipo sul target 2026-04-30 — promossi a forma canonica i 3 sistemi parziali: [[Processo-Pianificazione-Giornaliera]] · [[Processo-Validazione-Pilot]] · [[Processo-Cattura-E-Retrieval-Informazioni]]. Con HC-F4 chiusa, l'**intero step Foundation** del pillar Leadership Strategica è chiuso
 > - **Dipendenza verso Stability**: dopo Foundation, HC-S4 richiede skill `/weekly` già allineata a review pillar (**chiuso il 2026-04-20**)
+> - **Foundation deliverable entro 2026-05-31**: **4/8 completati** — ultimo: [[Processo-Studio-AI-Quotidiano]] (routine cloud, 2026-04-26)
 
 ## Pilot in go-live entro 3 settimane
 
