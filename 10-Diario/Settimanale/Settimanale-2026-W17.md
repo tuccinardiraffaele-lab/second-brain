@@ -18,8 +18,11 @@ tags:
 - **SOTA check pre-implementazione** — prima di partire con modello o agente, verificare stato dell'arte e best practices. Altrimenti si paga l'allineamento al SOTA post-delivery (rework evitabile) 
 
 ## 🎯 Stato OKR e Priorità
-- Rispetto a [[OKR-Correnti]]: 
-- Rispetto a [[Crescita-Priorità-Correnti]]: 
+- Rispetto a [[OKR-Correnti]]:
+  - **O1 AIOS**: ⚠️ molto in ritardo — stasera inizio scaffold collegamento con second brain per sbloccare Phase 10
+  - **O2 FT**: ✅ in traccia — paper trading debuggato, accumulo dati in corso
+  - **O3 Fondamenta**: ✅ studio giuridico ok, M&S e regolatorio ora hanno pillar dedicati
+- Rispetto a [[Crescita-Priorità-Correnti]]: focus shift su AIOS ora che FT è in orbita 
 
 ## 🏛️ Review pillar (cadenza settimanale)
 <!-- da [[Pillar-Doppio-Livello]] + [[Processo-Review-Cadence]] L1 — capture superficiale: evidenze attività + loss catturate -->
