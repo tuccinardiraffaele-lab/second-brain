@@ -54,10 +54,10 @@ Forma canonica del sistema applicata: input + output + processo + owner operativ
 	- Owner: slot serale (compilazione) + skill `/daily` mattutina
 	- Agganci: **P1 primario**, S su P5 e P2
 	- Riferimento: [[Processo-Pianificazione-Giornaliera]], [[Decisione-Sistema-Pianificazione-Giornaliera]]
-4. **Studio AI quotidiano** — *da costruire (sistema sistematico, non intermittente)*
-	- I/O: fonti AI accreditate → capture in vault + segnali tecnici/competitivi
-	- Owner: slot giornaliero da dichiarare nel time-block
-	- Agganci: **P1 primario**, S su P2 (input opportunità tecniche piloti) e S su P7 (segnali competitivi → sistema di scouting implicito)
+4. **Studio AI quotidiano** ★ — *esistente, codificato* in [[Processo-Studio-AI-Quotidiano]] (routine cloud 2026-04-26)
+	- I/O: 6 fonti AI accreditate (Anthropic, Willison, Claude Code docs, HN, X Anthropic/Amodei) → nota digest in `00-Inbox/` + notifica Slack
+	- Owner: Routine cloud (claude.ai/code/routines), trigger 12:00 daily
+	- Agganci: **P1 primario**, S su P2 (input opportunità tecniche piloti) e S su P7 (segnali competitivi)
 5. **Cattura & Retrieval Info** ★ — *esistente, codificata* in [[Processo-Cattura-E-Retrieval-Informazioni]] (promossa a forma canonica 2026-04-25)
 	- I/O: insight/decisione/concetto/riferimento esterno → nota canonica nel territorio + retrieval semantico on-demand
 	- Owner: founder (cattura event-driven) + Claude Code (triage in apertura sessione + retrieval) + skill di territorio
@@ -207,7 +207,7 @@ Forma canonica del sistema applicata: input + output + processo + owner operativ
 ### Foundation deliverable entro 2026-05-31
 
 3. **Cost Deployment** formalizzato (costruito da zero)
-4. **Studio AI quotidiano** codificato come sistema sistematico
+4. ✅ **Studio AI quotidiano** — codificato il 2026-04-26 come routine cloud: [[Processo-Studio-AI-Quotidiano]]
 5. **Policy Cross-Selling** (almeno regola binaria minima sul gate Quality)
 6. **Positioning Brief** v1
 7. **Sentinella Garante Regolatoria**
