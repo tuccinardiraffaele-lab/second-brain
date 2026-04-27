@@ -1,7 +1,7 @@
 ---
 tipo: progetto
 creato: 2026-04-13
-aggiornato: 2026-04-15
+aggiornato: 2026-04-27
 stato: attivo
 tags:
   - progetto/sistema-agentico
@@ -9,16 +9,33 @@ tags:
   - verifica-repo
 area: prodotto
 progetto: "[[Sistema-Agentico-Studio]]"
-prossima_azione: "Al prossimo sprint coding su AIOS Studio, verificare i 3 punti sotto"
+prossima_azione: "Chiudere R6 (firma cliente) + R2 (lettura GB) + R7 (API deadlines) prima di Phase 10"
 blocco: ""
 ---
 
 # Verifica roadmap agenti AIOS
 
-> [!info] Azione di verifica sul repo
-> Tre punti emersi in intervista che richiedono conferma nel codice/brain del progetto `~/projects/AIOS Studio/`. Non bloccanti per il pilot, ma vanno chiusi per avere una roadmap agenti coerente.
+> [!success] Verifica codice eseguita 2026-04-27
+> I 7 requisiti sono stati verificati nel codice tramite Explore mirato. Esito: **R1 OK / R3 e R7 PARZIALE / R2, R4, R5, R6 ASSENTE**. Bloccanti per go-live 2026-05-10: **R2, R6, R7**. Dettaglio per requisito (citazioni `file:line`) in `~/projects/AIOS Studio/.brain/00-Bridge/Phase-10-Guardrail-Architettura.md`. Questa nota mantiene il **perché** (intuizioni e gap originali); lo stato di implementazione vive nel guardrail.
 
-## Punti da verificare
+## Esito sintetico per requisito
+
+| ID | Requisito | Stato | Bloccante go-live |
+|---|---|---|---|
+| R1 | DB clienti context-dependent (forma giuridica, attività, regime) | **OK** — migration 041 | — |
+| R2 | Lettura fatture GB (flusso B / SDI diretto) | **ASSENTE** — `gb-integration-service` vuoto | **SÌ** se >50% volume |
+| R3 | Strato 1 vault baseline | **PARZIALE** — domain+routes ok, no auto-update normativo | NO (sì per pitch B2C/B2B) |
+| R4 | Override + retrofeedback umano | **ASSENTE** — no tabelle feedback | NO (decidere policy ora) |
+| R5 | Retraining threshold (Optuna) | **ASSENTE** — soglia hardcoded 0.85 | NO (post-MVP esplicito) |
+| R6 | Validation gate firma cliente | **ASSENTE** — FSM senza stati attesa firma | **SÌ** per dichiarativi/bilanci |
+| R7 | Alert engine scadenze | **PARZIALE** — DeadlineScanner ok, no API + no auto-sync | **SÌ** (soglia pilot #3) |
+
+> [!info] Sorpresa positiva
+> R1 (DB clienti) era dato per "non verificato" e si temeva fosse il primo gap bloccante. **È OK**: la migration `041_client_complete_profiles` espone `natura_giuridica`, `codice_ateco_primario` + `secondari[]`, `regime_contabile` enum. Resta solo la domanda di popolamento per i 10 pilot, da chiudere alla 2ª intervista padre.
+
+---
+
+## Punti originali (verificati e non) — conservati per traccia storica
 
 ### 1. Agente finanziario / advisory
 
@@ -52,65 +69,45 @@ blocco: ""
 
 **Cosa ho cercato**: `.brain/02-project/Next-Steps.md` (fine file = carryover Phase 10), `.brain/02-project/Overview.md`, `.brain/02-project/Current-State.md`, README, AGENTS.md, CLAUDE.md.
 
-**Cosa ho trovato**: il Next-Steps elenca Phase 10..13+ ma nella parte alta; la parte media-finale è dedicata alle task Phase 9. Nessuna sezione chiamata "roadmap ristrutturata".
+**Cosa ho trovato**: il Next-Steps elenca Phase 10..13+ ma nella parte alta; la parte media-finale è dedicata alle task Phase 9. Nessuna sezione chiamata "roadmap ristrutturata". *Da rivisitare dopo redesign brain locale del 2026-04-27 (la struttura `.brain/` è cambiata).*
 
-**Da verificare**:
+### 4. Copertura del flusso B — fatture via SDI direttamente in GBSoftware → R2
 
-- Path preciso del documento con la roadmap ristrutturata
-- Se lì sono elencati agenti futuri non trovati nella mia ricerca
+**Verificato 2026-04-27**: ASSENTE. `services/gb-integration-service/app/main.py:6` ha TODO esplicito; routes vuote. Vedi guardrail Phase 10.
 
-### 4. Copertura del flusso B — fatture via SDI direttamente in GBSoftware
+### 5. Struttura del DB clienti — campi necessari per classificazione context-dependent → R1
 
-**Emerso nel brainstorm del 2026-04-15** ([[AIOS-Brainstorm-Knowledge-Map-Padre]]): molte fatture non passano per il DocumentIntake di AIOS perché arrivano direttamente in GBSoftware via SDI/Agenzia Entrate. L'esperto le trova già lì da classificare.
+**Verificato 2026-04-27**: OK. Migration `data/migrations/versions/041_client_complete_profiles.py:32-50` espone i 3 campi. Resta da verificare popolamento per i 10 pilot.
 
-**Da verificare**:
+### 6. Retraining automatico del threshold di confidenza → R5
 
-- Phase 10 GBSoftware copre la **lettura** di fatture già presenti (oltre alla scrittura di nuove)?
-- Se no, quale meccanismo serve per triggerare l'AccountingAgent su queste fatture (polling, webhook, trigger manuale)?
-- Quale % del volume sui 10 clienti pilot arriva via flusso B? (domanda per papà, Blocco 1 knowledge map)
+**Verificato 2026-04-27**: ASSENTE. Nessun Optuna in `pyproject.toml`, soglia hardcoded `0.85` in `agents/validation_agent.py:28`. Da esplicitare post-MVP nella roadmap.
 
-Se il flusso B non è coperto al 10 maggio, il risparmio-tempo del dipendente sarà parziale → il pilot rischia di non convincere come blueprint.
+## Domande aperte (da chiudere alla 2ª intervista padre, 2026-05-03)
 
-### 5. Struttura del DB clienti — campi necessari per classificazione context-dependent
+Da [[AIOS-Intervista-Padre-Follow-Up]] e dalla verifica codice:
 
-**Emerso nel brainstorm del 2026-04-15**: l'AccountingAgent pesca dal DB clienti per la classificazione context-dependent. Campi necessari:
+- **R1**: regime contabile dei 10 pilot — chi popola e quando?
+- **R2**: % volume fatture via flusso B vs flusso A sui 10 pilot?
+- **R4**: override generalizza tra clienti simili o resta per-cliente?
+- **R6**: per quali tipi di output (oltre dichiarativi e bilanci) è obbligatoria la firma cliente?
+- Quadratura trimestrale: passi operativi (Lean mapping)
+- Bus-factor persona-per-persona
 
-- attività caratteristica (non solo ATECO, spesso generico)
-- regime contabile (ordinario / semplificato / forfettario)
-- forma giuridica (ss, snc, sas, srl, spa, sapa)
+## Azioni concrete prossime 48h
 
-**Da verificare**:
+In ordine di blocco al go-live 2026-05-10:
 
-- Il DB clienti supporta oggi questi tre campi?
-- Per i 10 clienti pilot, il DB è popolato o i campi sono vuoti?
-- Il **regime contabile** non è derivabile da documenti — serve popolamento a mano o da fonte esterna (cassetto fiscale). Chi lo fa e quando?
-
-### 6. Retraining automatico del threshold di confidenza
-
-**Emerso nel brainstorm del 2026-04-15**: il livello di confidenza è deciso, ma manca un meccanismo di **retraining automatico** che ottimizzi la soglia sulla base del feedback del commercialista.
-
-**Candidato tecnico**: **Optuna** su feedback retrofeedback del commercialista.
-
-**Da verificare**:
-
-- È MVP o post-MVP? Senza retraining, l'accuratezza non migliora con l'uso → metrica #1 di [[KR1.2 — Metriche pilot fissate con padre]] stagna.
-- Se post-MVP, quando entra in roadmap?
-
-## Perché è importante
-
-La **nota MOC [[Sistema-Agentico-Studio]]** descrive oggi solo 5 agenti MVP + 1 accorpato + 1 citato-ma-mancante. Se la roadmap ristrutturata contiene altri agenti pensati (es. ReconciliationAgent, SupervisionAgent dedicato, agenti B2C lato cliente finale), la descrizione del prodotto va aggiornata. È un debito informativo da chiudere.
-
-## Azione concreta
-
-- [ ] Al prossimo sprint coding su `~/projects/AIOS Studio/`, ripartire dal file che il founder indicherà
-- [ ] Aggiornare [[Sistema-Agentico-Studio]] con eventuali agenti mancanti
-- [ ] Decidere se l'agente consulenza lavoro merita un WS dedicato in una Phase futura
-- [ ] Verificare copertura **flusso B** (lettura fatture da GBSoftware via SDI) in Phase 10
-- [ ] Verificare struttura **DB clienti** (campi attività, regime contabile, forma giuridica) e stato di popolamento per i 10 clienti pilot
-- [ ] Decidere se il **retraining threshold via Optuna** è MVP o post-MVP
+- [ ] **R6** — Aggiungere stati `PENDING_CLIENT_SIGNATURE` / `PENDING_CLIENT_APPROVAL` in FSM (`packages/workflow-sdk/aios_workflow/transitions.py`) + gate in `workflow-governance-service` + evento firma in `human-review-service`
+- [ ] **R2** — Stub route `GET /invoices/inbound` in `gb-integration-service` + consumer per `gb.invoice.received`
+- [ ] **R7** — Endpoint `GET /practices/{practice_id}/deadlines/upcoming` + `POST /deadlines/reminders/emit` + scheduler mensile per `sync-ade-calendar.py` in `lifespan.py`
 
 ## Collegamenti
 
 - [[Sistema-Agentico-Studio]] — MOC prodotto
 - [[Prodotto-Vault-Substrato-Di-Prodotto]] — architettura a 3 strati
-- [[AIOS-Brainstorm-Knowledge-Map-Padre]] — fonte dei gap 4, 5, 6 sopra
+- [[AIOS-Brainstorm-Knowledge-Map-Padre]] — fonte dei gap 4, 5, 6
+- [[AIOS-Intervista-Padre-Domande-KB]] — pain e soglie originali
+- [[AIOS-Intervista-Padre-Follow-Up]] — 2ª intervista 2026-05-03
+- [[KR1.1 — Phase 10 GBSoftware completata]]
+- [[KR1.2 — Metriche pilot fissate con padre]]

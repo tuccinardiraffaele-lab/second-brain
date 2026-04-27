@@ -97,9 +97,15 @@ Ogni batch un commit separato con messaggio descrittivo.
 - Brain locale ancora non strutturato: prima definire tassonomia, poi triagiare.
 - Modifiche non-strutturali (refactor, feature): non è uno strumento di sviluppo, è di archiviazione/filing.
 
-## Prima applicazione
+## Applicazioni
 
-AIOS Studio, 2026-04-27 — vedi [[Diario-2026-04-27]] sezione triage e relativo log nel `.brain/` locale del progetto.
+- **2026-04-27 mattina** — AIOS Studio, triage 641 file `.knowledge/` legacy → 0 orfani locali (vedi [[Diario-2026-04-27]])
+- **2026-04-27 pomeriggio** — AIOS Studio, redesign `.brain/` MECE 10 livelli + dismissione Codex (variante: 5 Explore + 1 fact-check + 3 dibattitori + AskUserQuestion)
+- **2026-04-27 sera** — AIOS Studio, **variante "verità di prodotto"**: 5 Explore territori MECE (agenti / service contracts / dominio / ADR / integrazioni) + **2 fact-checker indipendenti** (coerenza interna vs divergenze vault) → mappa di crossing locale↔globale + verifica R1-R7 pre-Phase 10. Differenza dalla pipeline canonica: gli Explore non triagiano file, **estraggono conoscenza di prodotto**; i fact-checker sono 2 in parallelo con bias divergente (interno vs esterno-vault), non 1 Opus singolo.
+
+
+
+
 
 ## Note collegate
 

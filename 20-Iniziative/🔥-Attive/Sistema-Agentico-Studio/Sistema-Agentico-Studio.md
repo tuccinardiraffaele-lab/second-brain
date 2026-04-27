@@ -8,7 +8,7 @@ tags:
   - prodotto/ai
   - strategia/bet-principale
 area: prodotto
-prossima_azione: "Completare integrazione GBSoftware (Phase 10)"
+prossima_azione: "Chiudere R6/R2/R7 nel codice (48h) e sanare 3 note vault prima 2ª intervista padre 2026-05-03, poi entrare in Phase 10"
 blocco: ""
 repo_path: ~/projects/AIOS Studio
 brain_path: ~/projects/AIOS Studio/.brain
@@ -37,6 +37,8 @@ Cinque agenti AI rule-based, coordinati da un **Supervisor LLM**, che eseguono i
 **Architettura**
 - [[AIOS-Architettura-Tre-Strati]] — vault Obsidian + processi lean + agenti AI
 - [[AIOS-Architettura-Agenti]] — i 5 agenti + invarianti (no coupling, separazione exec/val, firma cliente)
+- [[AIOS-Servizi-Inventario]] — 12 servizi (11 MVP + GB Integration Phase 10) con porte e fasi
+- [[AIOS-Stack-Tecnico]] — Python/FastAPI + Postgres/Redis/MinIO + Anthropic-only (Sonnet 4 / Haiku 4.5)
 - [[AIOS-Audit-Primitive-Agentiche]] — primitive agentiche (~12)
 
 **Pilot**
@@ -66,13 +68,14 @@ Struttura rilevante:
 ## Azioni aperte
 
 - [[AIOS-Chiarire-Metriche-Pilot]] — soglia "tempo risparmiato"
-- [[AIOS-Verifica-Roadmap-Agenti]] — roadmap agenti futuri (advisory finanziario, consulenza lavoro)
+- [[AIOS-Verifica-Roadmap-Agenti]] — esito verifica R1-R7 chiuso 2026-04-27, restano R6/R2/R7 da implementare
+- [[AIOS-Sanitizzazione-Note-Vault]] — rewrite di 3 note vault top-priority (MVP-Confine, Architettura-Agenti+MOC, Rischi-Pilot) prima della 2ª intervista padre
 - [[AIOS-Intervista-Padre-Follow-Up]] — seconda intervista KB (2026-05-03)
 - [[AIOS-Intervista-Esperto-GBSoftware]] — intervista esperto integrazione (2026-05-01)
 
 ## Log sessioni
 
-- [[2026-04-27]] — redesign MECE del brain locale `.brain/` + dismissione Codex (vedi [[Dismissione-Codex]]) + 4 ADR conformati a skill `decision`
+- [[2026-04-27]] — pipeline multi-agent verità-di-prodotto + verifica R1-R7 nel codice + guardrail Phase 10 in `.brain/00-Bridge/` + estensione vault (`AIOS-Servizi-Inventario`, `AIOS-Stack-Tecnico`, `AIOS-Sanitizzazione-Note-Vault`) + redesign MECE brain locale del mattino + dismissione Codex (vedi [[Dismissione-Codex]])
 - [[2026-04-26]] — split MOC in note atomiche (8 atomiche AIOS create)
 - [[2026-04-20]] — aggiornamento MOC (stadio 1/2) con insight intervista padre: pain scadenze promosso, value prop relazionale, workflow firma cliente, ripriorizzazione post-MVP, ICP rafforzato.
 - [[2026-04-19]] — prima intervista padre KB AIOS: soglie pilot chiuse ([[Decisione-Soglie-Pilot-AIOS]], [[AIOS-Intervista-Padre-Domande-KB]]).
