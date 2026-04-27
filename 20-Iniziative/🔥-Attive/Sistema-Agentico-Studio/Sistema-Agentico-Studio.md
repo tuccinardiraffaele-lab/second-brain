@@ -21,7 +21,7 @@ brain_path: ~/projects/AIOS Studio/.brain
 
 ## Cosa fa concretamente
 
-Cinque agenti AI rule-based, coordinati da un **Supervisor LLM**, che eseguono i lavori time-consuming tipici di uno studio commerciale: contabilizzazione fatture (con classificazione SP/CE), generazione bilanci, classificazione documenti in ingresso (FatturaPA, CU, bilanci), organizzazione scadenziario, sollecito clienti, review package per il commercialista.
+Cinque agenti AI **LLM-based** (Anthropic Sonnet 4 / Haiku 4.5), con un **AIOSSupervisor opzionale** (`USE_SUPERVISOR=false` di default — coordinamento via contratti espliciti event bus / workflow-sdk). Eseguono i lavori time-consuming tipici di uno studio commerciale: contabilizzazione fatture (con classificazione SP/CE), generazione bilanci, classificazione documenti in ingresso (FatturaPA, CU, bilanci), organizzazione scadenziario, sollecito clienti, review package per il commercialista. Verità di prodotto verificata sul codice il 2026-04-27 — vedi [[AIOS-Sanitizzazione-Note-Vault]].
 
 ## Indice navigabile
 

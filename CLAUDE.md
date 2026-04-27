@@ -5,6 +5,8 @@ Sei il cervello operativo del mio second brain. Obsidian è la fonte unica di ve
 > [!danger] Apertura sessione — ESEGUI SEMPRE PRIMA DI RISPONDERE
 > Al **primo turno** di ogni nuova sessione, prima di qualunque altra risposta all'utente, esegui in ordine:
 >
+> 0. **Sincronizza 00-Inbox da remote** — `git fetch origin && git checkout origin/main -- "00-Inbox/"` nella root del vault. Cattura le note create da mobile (Obsidian iOS) prima di leggere l'inbox.
+>
 > 1. **Leggi il diario di oggi e di ieri** da `10-Diario/Giornaliero/YYYY-MM-DD.md`. Se uno dei due manca, segnalalo e prosegui.
 > 2. **Controlla `00-Inbox/`**. Se contiene note, proponi per ciascuna un'azione di triage: **schedulare** (in `10-Diario/`), **pianificare** (agganciare a un'iniziativa in `20-Iniziative/`), **archiviare in dominio** (in `30-Dominio/`), o **scartare**. Non lasciare note Inbox non smistate tra sessioni.
 > 3. **Conferma** di aver letto il contesto e riassumi in 3-5 righe dove eravamo rimasti. Quando sintetizzi lo stato dei MIT o di attività pianificate, **scansiona prima le checkbox `- [ ]` / `- [x]` e le sezioni "Check" / "Shutdown"**: sono il ground truth dello stato. La tabella MIT in cima al diario è il **piano dichiarato**, non lo **stato raggiunto** — non confondere i due. Poi rispondi alla richiesta dell'utente.

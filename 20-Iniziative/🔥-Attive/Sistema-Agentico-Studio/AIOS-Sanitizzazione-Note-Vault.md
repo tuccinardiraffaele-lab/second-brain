@@ -9,7 +9,7 @@ tags:
   - vault/sanitizzazione
 area: prodotto
 progetto: "[[Sistema-Agentico-Studio]]"
-prossima_azione: "Sanare 3 note top-priority prima della 2ª intervista padre 2026-05-03"
+prossima_azione: "Sanitizzazioni minori post-go-live (>2026-05-10): Architettura-Tre-Strati, Timeline-Pilot, Value-Prop-Pain-E-Relazione"
 blocco: ""
 ---
 
@@ -23,26 +23,29 @@ blocco: ""
 
 ## Top-3 sanitizzazioni pre-2026-05-03
 
-### 1. [[AIOS-MVP-Confine-Operativo]] — riscrivere
+> [!success] Chiuse il 2026-04-27
+> Tutte e 3 le note top-priority sanate prima della 2ª intervista padre. MOC [[Sistema-Agentico-Studio]] riga 24 corretta in coda.
 
-- **Stato vault**: dice "MVP = contabilizzazione fatture + GBSoftware"
+### 1. [[AIOS-MVP-Confine-Operativo]] — riscritta ✅
+
+- **Stato vault precedente**: "MVP = contabilizzazione fatture + GBSoftware"
 - **Realtà codice**: scope MVP = **6 use case** (intake doc / apertura pratica / contabilità operativa / adempimenti fiscali standard / scadenze-task / validazione output) + out-of-scope espliciti (payroll, audit enti pubblici, tax advisory, labor advisory, research normativa)
-- **Azione**: riscrivere allargando perimetro + sezione "fuori scope" esplicita
+- **Azione fatta**: riscritta allargando perimetro a 6 use case + sezione "fuori scope" esplicita con 5 voci
 
-### 2. [[AIOS-Architettura-Agenti]] + MOC [[Sistema-Agentico-Studio]] (riga 24) — correggere
+### 2. [[AIOS-Architettura-Agenti]] + MOC riga 24 — corrette ✅
 
-- **Stato vault**: "5 agenti rule-based coordinati da Supervisor LLM"
+- **Stato vault precedente**: "5 agenti rule-based coordinati da Supervisor LLM"
 - **Realtà codice**: **5 agenti LLM-based** (DocumentAgent, AccountingAgent con Sonnet 4, ValidationAgent con LLM separato VER-002, FiscalAgent, ReviewAgent) + **AIOSSupervisor con flag `USE_SUPERVISOR=false` di default** (ADR-004)
-- **Azione**: riscrivere tabella agenti con capability reali + esplicitare che il Supervisor è overlay opzionale
+- **Azione fatta**: tabella agenti riscritta con modello/tipo + esplicitato Supervisor come overlay opzionale; MOC riga 24 corretta in coerenza
 
-### 3. [[AIOS-Rischi-Pilot]] — aggiornare
+### 3. [[AIOS-Rischi-Pilot]] — aggiornata ✅
 
-- **Stato vault**: solo timeline stretta + GBSoftware gate
+- **Stato vault precedente**: solo timeline stretta + GBSoftware gate
 - **Realtà codice**: 3 red flag concreti emersi dalla verifica R1-R7:
   - Strato 1 vault baseline è PARZIALE (Knowledge Reference Service esiste ma senza auto-update normativo)
   - R6 firma cliente ASSENTE (vincolo non negoziabile D27 intervista — bloccante per dichiarativi/bilanci)
   - R7 alert scadenze PARZIALE (motore esiste, manca API + scheduler — soglia pilot #3)
-- **Azione**: aggiungere sezione "rischi architetturali concreti" referenziando il guardrail Phase 10 nel `.brain/`
+- **Azione fatta**: aggiunta sezione "rischi architetturali concreti" con R3/R6/R7 + backlog 48h + reference al guardrail Phase 10 nel `.brain/`
 
 ## Sanitizzazioni minori (post-go-live)
 
@@ -58,7 +61,7 @@ blocco: ""
 
 ## Quando
 
-- **Top-3** prima della 2ª intervista padre **2026-05-03** — la conversazione poggia sulla narrativa di prodotto, deve essere allineata
+- **Top-3** prima della 2ª intervista padre **2026-05-03** — ✅ chiuse il 2026-04-27
 - **Minori** post-go-live (>2026-05-10), salvo emergano usi specifici prima
 
 ## Note collegate
