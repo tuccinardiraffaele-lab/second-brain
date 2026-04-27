@@ -1,7 +1,7 @@
 ---
 tipo: progetto
 creato: 2026-04-13
-aggiornato: 2026-04-26
+aggiornato: 2026-04-27
 stato: attivo
 tags:
   - progetto/sistema-agentico
@@ -59,8 +59,9 @@ Struttura rilevante:
 - `agents/` — cinque agenti MVP
 - `services/orchestration-service/` — Supervisor LLM
 - `services/human-review-service/` — superficie human-in-the-loop
-- `.brain/02-project/Next-Steps.md` — stato Phase 10 (GBSoftware) e carryover
-- `docs/phase-9-readiness-review.md` — ultimo readiness review completato
+- `.brain/10-Progetto/Next-Steps.md` — stato Phase 10 (GBSoftware) e carryover
+- `.brain/99-Archivio/phase-readiness-scope/phase-9-readiness-review.md` — ultimo readiness review completato
+- `.brain/00-Bridge/` — protocollo di crossing vault ↔ brain locale (5 tipi T1-T5) e mapping aree
 
 ## Azioni aperte
 
@@ -71,6 +72,7 @@ Struttura rilevante:
 
 ## Log sessioni
 
+- [[2026-04-27]] — redesign MECE del brain locale `.brain/` + dismissione Codex (vedi [[Dismissione-Codex]]) + 4 ADR conformati a skill `decision`
 - [[2026-04-26]] — split MOC in note atomiche (8 atomiche AIOS create)
 - [[2026-04-20]] — aggiornamento MOC (stadio 1/2) con insight intervista padre: pain scadenze promosso, value prop relazionale, workflow firma cliente, ripriorizzazione post-MVP, ICP rafforzato.
 - [[2026-04-19]] — prima intervista padre KB AIOS: soglie pilot chiuse ([[Decisione-Soglie-Pilot-AIOS]], [[AIOS-Intervista-Padre-Domande-KB]]).
