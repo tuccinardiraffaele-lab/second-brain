@@ -1,7 +1,7 @@
 ---
 tipo: processo
 creato: 2026-04-14
-aggiornato: 2026-04-20
+aggiornato: 2026-04-27
 stato: attivo
 tags:
   - strumenti/claude-code
@@ -27,6 +27,10 @@ Il confine NON è "tocca il codice / non tocca il codice". Il confine è **"vale
 > Il vault locale **include** `.brain/` — non sono due entità parallele. Il repo pilota ha **un solo vault Obsidian locale**, di cui `.brain/` è una sottocartella. Conseguenza operativa: il grafo di Obsidian vede sia le note Obsidian native del repo che il contenuto di `.brain/` come parte dello stesso grafo locale. Chiarimento emerso nella strutturazione Sessione 2 di [[Prodotto-Pillar-Delivery-Piloti]].
 
 Le note di livello diverso si **referenziano via wikilinks**, non si duplicano.
+
+
+> [!example] Insight tassonomico osservato (triage AIOS 2026-04-27)
+> Il confine **`20-Architettura/` (tecnico) vs `40-Dominio/` (business)** del brain locale si verifica leggendo il **contenuto**, non il nome. Esempio reale: `Workflow-AIOS.txt` sembrava architettura tecnica per nome — risultava invece descrizione del dominio studio commercialista (paese ~20k abitanti, 4 linee operative). Riallocato a `40-Dominio/Workflow-Studio-Commercialista.md`. Vedi [[Processo-Triage-Repo-Multi-Agent]] per la pipeline che ha catturato il misfiling.
 
 ## Regola di filing canonica
 
