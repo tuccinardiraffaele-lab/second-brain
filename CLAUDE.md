@@ -5,7 +5,7 @@ Sei il cervello operativo del mio second brain. Obsidian è la fonte unica di ve
 > [!danger] Apertura sessione — ESEGUI SEMPRE PRIMA DI RISPONDERE
 > Al **primo turno** di ogni nuova sessione, prima di qualunque altra risposta all'utente, esegui in ordine:
 >
-> 0. **Sincronizza 00-Inbox da remote** — `git fetch origin && git checkout origin/main -- "00-Inbox/"` nella root del vault. Cattura le note create da mobile (Obsidian iOS) prima di leggere l'inbox.
+> 0. **Sincronizza 00-Inbox da remote (solo prima sessione del giorno)** — controlla `_Sistema/.last-vault-fetch`: se contiene la data di oggi (YYYY-MM-DD), **salta lo step**. Altrimenti esegui `git fetch origin && git checkout origin/main -- "00-Inbox/"` nella root del vault, poi aggiorna il marker con `date +%F > _Sistema/.last-vault-fetch`. Serve a catturare le note create da mobile (Obsidian iOS) **una volta sola al giorno** — sessioni successive non devono ri-fetchare, altrimenti riportano dentro note il cui triage è già stato fatto nella prima sessione.
 >
 > 1. **Leggi il diario di oggi e di ieri** da `10-Diario/Giornaliero/YYYY-MM-DD.md`. Se uno dei due manca, segnalalo e prosegui.
 > 2. **Controlla `00-Inbox/`**. Se contiene note, proponi per ciascuna un'azione di triage: **schedulare** (in `10-Diario/`), **pianificare** (agganciare a un'iniziativa in `20-Iniziative/`), **archiviare in dominio** (in `30-Dominio/`), o **scartare**. Non lasciare note Inbox non smistate tra sessioni.

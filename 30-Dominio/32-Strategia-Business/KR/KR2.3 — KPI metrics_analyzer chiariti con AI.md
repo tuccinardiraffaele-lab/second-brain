@@ -1,8 +1,8 @@
 ---
 tipo: kr
 creato: 2026-04-13
-aggiornato: 2026-04-13
-stato: attivo
+aggiornato: 2026-05-02
+stato: archiviato
 progresso: 0
 okr_parent: "[[OKR-Correnti]]"
 objective: "O2 — Football Trading validato e in orbita"
@@ -22,3 +22,6 @@ Sessione con AI (intelligenza artificiale) per chiarire i KPI del componente `me
 - [[OKR-Correnti]]
 - [[FT-Chiarire-KPI-Metrics-Analyzer]]
 - [[Football-Trading]]
+
+> [!failure] Archiviato il 2026-05-02
+> KR chiuso senza target a seguito della chiusura definitiva del pilota Football Trading. Vedi [[Chiusura-Pilot-Football-Trading]].

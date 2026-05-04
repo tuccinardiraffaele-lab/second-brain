@@ -1,7 +1,7 @@
 ---
 tipo: progetto
 creato: 2026-04-20
-aggiornato: 2026-04-20
+aggiornato: 2026-04-28
 stato: attivo
 tags:
   - progetto/sistema-agentico
@@ -10,7 +10,7 @@ tags:
   - aios/kb
 area: prodotto
 progetto: "[[Sistema-Agentico-Studio]]"
-prossima_azione: "Confermare con l'esperto la disponibilità per venerdì 2026-04-24"
+prossima_azione: "Confermare con l'esperto la disponibilità per giovedì 2026-04-30 (era 2026-05-01, spostata per festivo)"
 blocco: ""
 ---
 
@@ -30,8 +30,8 @@ blocco: ""
 
 | Data | Attività |
 |---|---|
-| **Settimana 2026-04-20 → 2026-04-24** | Confermare disponibilità con l'esperto |
-| **2026-04-24 (venerdì, da confermare)** | Esecuzione intervista |
+| **Settimana 2026-04-27 → 2026-04-30** | Confermare disponibilità con l'esperto |
+| **2026-04-30 (giovedì, da confermare)** | Esecuzione intervista — spostata da 2026-05-01 (festivo) |
 
 ## Perché serve ora
 

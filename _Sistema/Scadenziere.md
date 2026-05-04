@@ -1,7 +1,7 @@
 ---
 tipo: scadenziere
 creato: 2026-04-16
-aggiornato: 2026-04-26
+aggiornato: 2026-05-03
 stato: attivo
 tags:
   - sistema/scadenziere
@@ -19,17 +19,28 @@ area: operazioni
 > - **Scrittura**: quando dichiari un impegno con data futura (>7gg), registra qui. Wikilink dalla nota sorgente con anchor di data.
 > - **Chiusura**: spostare in `## Orizzonte agosto 2026
 
+### 2026-08-02 — Revisione chiusura pilot Football Trading
+- **Fonte**: [[Chiusura-Pilot-Football-Trading]]
+- **Azione**: verificare che la chiusura abbia liberato valore — tempo confluito su AIOS, no rientro impulsivo, loss FT riusate cross-progetto.
+
 ### 2026-08-10 — Revisione soglie pilot AIOS
 - **Fonte**: [[Decisione-Soglie-Pilot-AIOS]]
 - **Azione**: verificare se le tre soglie pilot sono state raggiunte sul periodo di osservazione post go-live → promozione AIOS oltre il pilot o stop.
+
+## Trigger evento-driven (no data fissa)
+
+### Pre-apertura filone B2B AIOS — Security audit codebase
+- **Fonte**: [[Studio-AI-2026-05-01]] · [[Studio-AI-2026-05-03]] · [[Strategia-Attuale#Il vincolo di reputazione (principio non negoziabile)|vincolo reputazionale B2B]]
+- **Trigger**: post go-live AIOS studio padre + decisione di aprire il filone B2B (vendita ad altri studi).
+- **Azione**: eseguire security audit del codebase AIOS via **Claude Security** (public beta Enterprise da 2026-05-01) prima del primo prospect B2B. Output: scan + dismissioni documentate + patch generate. Riduce rischio reputazionale di vulnerabilità esposte a peer professionali.
 
 ## Archivio` con esito sintetico (fatto/slittato/cancellato) quando la data passa.
 
 ## Orizzonte prossimi 14 giorni
 
-### 2026-05-01 — Intervista esperto GBSoftware (dominio di processo)
+### 2026-04-30 — Intervista esperto GBSoftware (dominio di processo)
 - **Fonte**: [[AIOS-Intervista-Esperto-GBSoftware]] · [[KR1.1 — Phase 10 GBSoftware completata]]
-- **Azione**: eseguire intervista al supervisore contabilità clienti dello studio su flussi GBSoftware e regole di riclassificazione fatture. Data da confermare con l'interessato durante la settimana. Sblocca binario "dominio di processo" della Phase 10.
+- **Azione**: eseguire intervista al supervisore contabilità clienti dello studio su flussi GBSoftware e regole di riclassificazione fatture. Spostata da 2026-05-01 (festivo) a giovedì 2026-04-30. Sblocca binario "dominio di processo" della Phase 10.
 
 ### 2026-05-02 — Pianificare seconda intervista padre (follow-up KB)
 - **Fonte**: [[AIOS-Intervista-Padre-Follow-Up]]

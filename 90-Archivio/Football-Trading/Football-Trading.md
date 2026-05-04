@@ -1,8 +1,8 @@
 ---
 tipo: progetto
 creato: 2026-04-13
-aggiornato: 2026-04-26
-stato: attivo
+aggiornato: 2026-05-02
+stato: archiviato
 repo_path: ~/projects/ai-football-trading
 brain_path: ~/projects/ai-football-trading/.brain
 tags:
@@ -10,11 +10,17 @@ tags:
   - pilota
   - prodotto
 area: prodotto
-prossima_azione: "Accumulo trades in paper mode per addestramento modelli (fase di apprendimento)"
-blocco: "Go-live in produzione subordinato a ≥1 mese di paper trading in profitto"
+prossima_azione: "—"
+blocco: "Pilota chiuso definitivamente — vedi Chiusura-Pilot-Football-Trading"
 ---
 
 # Football Trading
+
+> [!failure] Pilota chiuso definitivamente il 2026-05-02
+> Sistema strutturalmente in perdita: tunare i modelli per accuracy comprime il volume ma non sposta il segno del PnL. L'edge non è monetizzabile su questo design. Combinato con il disallineamento strategico (FT non costruisce reputazione/capability per la consulenza in proprio), il pilota è chiuso definitivamente. Tempo riallocato totalmente su [[Sistema-Agentico-Studio]].
+>
+> Riferimento canonico: [[Chiusura-Pilot-Football-Trading]]. Riapertura possibile solo con nuova `/decision` di reversal.
+
 
 > [!info] In una frase
 > Sistema di football trading **automatico** che monetizza l'edge tra probabilità reali dell'evento e prezzo del mercato Betfair, attraverso un ensemble statistico (Poisson + XGBoost con embedding contestuali live) amplificato da un layer AI che filtra ambiguità e si riaddestra periodicamente. Rivolto a trader esperti high-ticket che cercano **monetizzazione passiva** senza presidio manuale.

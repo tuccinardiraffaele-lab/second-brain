@@ -1,15 +1,16 @@
 ---
 tipo: progetto
 creato: 2026-04-19
-aggiornato: 2026-04-19
+aggiornato: 2026-05-03  # esecuzione + trascrizione
 stato: attivo
 tags:
   - progetto/sistema-agentico
   - azione-aperta
   - intervista
+  - chiuso
 area: prodotto
 progetto: "[[Sistema-Agentico-Studio]]"
-prossima_azione: "Pianificare la seconda intervista con padre il 2026-04-25"
+prossima_azione: ""
 blocco: ""
 ---
 
@@ -160,6 +161,57 @@ Quando AIOS classifica un documento e tu (o un collaboratore) lo correggi spiega
 
 La nostra ipotesi attuale: **il sistema ti propone, tu decidi caso per caso**. Confermi?
 
+### 5. Gate A→B GBSoftware — preparazione sessione operativa
+
+> [!info] Perché serve
+> AIOS sta per generare 4 file di output verso GB (F24 telematico, anagrafica da visura, report variazione IVA, FatturaPA emessa). Per chiudere la **Fase B** dello sprint parser servirà una sessione di 60 min davanti a GB (Gate A→B) — vedi piano `s-non-ti-preoccupare-partitioned-pond.md`. La prima intervista ha escluso l'operatività GB ("coperta separatamente con la persona che se ne occupa"): qui chiedo solo le cose che **tu titolare puoi dirmi senza accendere GB**, così quando ci troviamo davanti al gestionale partiamo già con il 70% delle domande risolte.
+
+#### 5.1 Workflow attuale dei 4 documenti — chi fa cosa, oggi
+
+Per ognuno dei 4 documenti, vorrei capire **come oggi li gestite in studio senza AIOS**, perché AIOS deve sostituire il pezzo meccanico e lasciare a voi il pezzo di giudizio.
+
+1. **F24 telematico** — quando arriva (cliente che lo paga in home banking? predisposto da voi?), chi lo registra in GB, lo digitate a mano nella prima nota o c'è un import? In quanti minuti tipici si chiude un F24?
+2. **Visura camerale** (apertura nuovo cliente o aggiornamento) — chi tipicamente la richiede in CCIAA, chi inserisce/aggiorna l'anagrafica in GB, in che momento del processo (è la segreteria a farlo in onboarding, o capita anche dopo)? Quanto tempo si perde tipicamente in questo passaggio?
+3. **Variazione IVA (AA7/AA9)** — quando capita (apertura, chiusura, cambio regime, cambio sede), chi compila il modello, chi aggiorna l'anagrafica GB di conseguenza, chi gestisce il deposito? Quante variazioni IVA all'anno gestisce lo studio in totale (stima)?
+4. **FatturaPA emessa** (es. fatture che lo studio emette per conto del cliente come servizio aggiuntivo — emerso in [[AIOS-Intervista-Padre-Domande-KB|D7]]) — chi prepara, chi trasmette a SDI, come la registrate in GB sul registro IVA del cliente? Quanti clienti circa hanno questo servizio?
+
+#### 5.2 Configurazione GB — quello che sai a memoria
+
+5. Versione INTEGRATO GB attualmente in uso (numero release o anno).
+6. Archivio dati: Access locale (`.mdb`) o SQL Server? Se SQL, è server di studio o cloud GB?
+7. Multi-azienda: GB identifica le ditte con codice numerico, alfanumerico, denominazione? Esiste un'unica anagrafica condivisa fra ditte o ogni ditta ha la sua?
+8. Lo studio ha **contratto di assistenza GB attivo** + accesso area riservata GBSoftware? È da lì che si scaricano la documentazione tracciati e gli aggiornamenti.
+
+#### 5.3 Import/export — cosa si fa già, cosa è solo manuale
+
+9. Esiste in GB **almeno una funzione di import da file** che lo studio usa abitualmente (anagrafica, prima nota, F24, fatture)? Se sì, quale? Se no, **tutto è digitazione manuale**?
+10. Hai mai sentito parlare di **import anagrafica da XML** in GB? Lo avete mai usato o è una funzione che esiste sulla carta ma in studio non la tocca nessuno?
+11. Per le **fatture elettroniche passive** (XML SDI ricevuti dai fornitori dei clienti), GB le importa nativamente generando la prima nota, o qualcuno deve trascrivere?
+
+#### 5.4 Codici causali e piano dei conti — chi li conosce
+
+12. Lo studio usa il **piano dei conti standard GB** o uno personalizzato cliente per cliente? Se personalizzato, esiste un PDC "tipo studio" replicato su tutti?
+13. Le **causali contabili** (es. "Fattura emessa", "Pagamento F24", "Pagamento INAIL", "Versamento IVA periodica") sono codici GB standard o codici interni dello studio? Chi è la persona di riferimento che conosce a memoria i codici causali usati di default — tu, contabile società, contabile privati, segreteria?
+14. Per AIOS l'output dovrà contenere il codice causale corretto altrimenti GB rifiuta l'import: chi è la persona giusta da coinvolgere quando arriviamo al gate per estrarre la mappa codici → significato?
+
+#### 5.5 Variazione IVA — decisione HITL (B3)
+
+> [!info] Perché te lo chiedo prima del gate
+> GB Software **non ha un tracciato nativo per la variazione IVA** (è un modello AdE, non un evento contabile). Abbiamo due strade per la Fase B: (a) AIOS produce solo un **report leggibile** che il contabile usa come promemoria per aggiornare a mano l'anagrafica GB — pronto subito, zero attesa; (b) apriamo un canale formale con GB Software per chiedere un tracciato dedicato — settimane/mesi di attesa per una funzione che si usa poche volte l'anno.
+
+15. Stima **frequenza variazioni IVA** all'anno nello studio (≈ 5? ≈ 20? ≈ 50?).
+16. È accettabile che AIOS lasci alla persona dello studio la digitazione finale in GB, fornendo un **report già strutturato e completo** (cioè HITL by design)? O preferisci che insistiamo per un tracciato nativo?
+
+#### 5.6 Sandbox per i test in Fase B
+
+17. Esiste già una **ditta di prova** in GB usata per testare cose nuove, oppure ne creiamo una al momento durante il gate? Importante: i test della Fase B **non possono toccare ditte reali**.
+18. Backup automatico del database GB attivo? In caso un test rompesse qualcosa, **rollback è banale o richiede manualità tecnica**?
+
+#### 5.7 Priorità — quale dei 4 sblocca più valore
+
+19. Tra i 4 documenti, mettendoli in ordine, **quale ti farebbe risparmiare più tempo se automatizzato per primo**? F24, Visura, Variazione IVA, FatturaPA emessa — ranking 1-4. Serve per decidere quale writer raffinare per primo dopo il gate, se i tempi della Fase B fossero stretti.
+20. C'è un **quinto documento ricorrente** che oggi è la stessa categoria di rumore (estrazione + ingresso GB) e che dovremmo aggiungere allo sprint successivo? (Es. modello Unico, LIPE, LUL paghe, dichiarazioni IVA periodiche, certificazione unica.)
+
 ## Criterio di chiusura — aggiornamento
 
 La seconda intervista si considera chiusa quando nel vault, oltre alle 3 note già previste, esistono:
@@ -168,3 +220,30 @@ La seconda intervista si considera chiusa quando nel vault, oltre alle 3 note gi
 - Una decisione su **rinnovo mandato di trasmissione** (annuale, per dichiarazione, una volta a vita)
 - Una decisione sulle **5 zone grigie** (FEA tablet, autotutela, CU sintetica, SUAP, adeguata verifica a distanza)
 - Una decisione sulla **propagazione degli override** (per-cliente vs proposta sistemica)
+- Un **dossier preparatorio Gate A→B GB**: workflow attuale dei 4 documenti, configurazione GB nota, persona di riferimento per codici causali, decisione HITL Variazione IVA, ranking di priorità tra i 4 documenti
+
+
+## Esito intervista — 2026-05-03
+
+> [!success] Intervista chiusa, trascrizione completata
+> Tutti i criteri di chiusura della nota soddisfatti. Le 5 note di output sono state scritte nel vault e linkate dalla MOC [[Sistema-Agentico-Studio]] nella sezione "Knowledge studio del padre (intervista 2026-05-03)".
+
+### Note di output prodotte
+
+- [[AIOS-Bus-Factor-Studio]] — mappa persona→impatto sulle 4 posizioni (tema 1)
+- [[AIOS-Cliente-Fuori-Standard]] — 3 archetipi (edilizia, notaio, farmacia) tutti dentro pilot (tema 2)
+- [[AIOS-Processo-Quadratura-Trimestrale]] — sequenza 8 passi + colli di bottiglia 5 e 7 (tema 3)
+- [[AIOS-Firma-Deleghe-Procure-Cliente]] — 17 atti + delega unica + 6 zone grigie + antiriciclaggio cablato (tema 4)
+- [[AIOS-Gate-GBSoftware-Dossier]] — dossier preparatorio Gate A→B (tema 5)
+
+### Decisioni cablate emerse durante l'intervista
+
+- **Pilot stressa il sistema, niente "v2"**: i 3 archetipi fuori standard entrano nel pilot fin dal go-live. Salvata memoria globale `feedback_pilot_no_semplificazioni`.
+- **Antiriciclaggio cablato (γ) fin dal go-live**: AIOS forza la compliance D.Lgs. 231/2007 dove oggi c'è gap; modulistica + firma cliente + blocco output verso enti se firma manca. Vedi [[AIOS-Firma-Deleghe-Procure-Cliente#2 Gap antiriciclaggio cablato fin dal go-live]].
+- **Delega unica AdE (D.Lgs. 1/2024)**: tutti i 10 pilot già migrati al regime nuovo (4 anni). AIOS cabla solo regime nuovo.
+- **Bersaglio numero uno Fase B GB**: import fatture passive (GB non importa nativamente, oggi trascrizione manuale).
+- **Ranking writer Fase B**: Visura (1°) → Variazione IVA (2°) → F24 (3°) → FatturaPA (4°), logica "libera la segreteria".
+
+### Voci da verificare al Gate A→B GBSoftware
+
+Vedi [[AIOS-Gate-GBSoftware-Dossier#TODO da verificare al Gate A B]] — versione INTEGRATO, anagrafica multi-azienda, contratto assistenza + area riservata, import anagrafica XML, tracciato import prima nota, ID record interno cliente, backup/rollback, mappa codici causali standard.

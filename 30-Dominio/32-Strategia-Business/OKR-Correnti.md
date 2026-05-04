@@ -1,7 +1,7 @@
 ---
 tipo: processo
 creato: 2026-04-13
-aggiornato: 2026-04-13
+aggiornato: 2026-05-02
 stato: attivo
 tags:
   - strategia/okr
@@ -12,7 +12,7 @@ area: strategia
 # OKR correnti — Q2 2026
 
 > [!info] In una frase
-> Tre Objective per il trimestre: portare **AIOS in produzione** senza rompere **Football Trading** né i **fondamenti della transizione** (studio giuridico, marketing/sales, monitoraggio regolatorio).
+> Due Objective attivi per il trimestre: portare **AIOS in produzione** e mantenere i **fondamenti della transizione** (studio giuridico, marketing/sales, monitoraggio regolatorio). L'Objective 2 — Football Trading è stato **archiviato il 2026-05-02** dopo la chiusura definitiva del pilota (vedi [[Chiusura-Pilot-Football-Trading]]).
 
 ## Diagnosi strategica
 
@@ -23,7 +23,7 @@ Vedi [[Strategia-Attuale]] per la strategia completa.
 ## Guiding policy
 
 **Farai:**
-- Priorità #1: AIOS go-live, presidio quotidiano finché non è in produzione (dopo che FT paper trading è confidente-debuggato)
+- Priorità #1: AIOS go-live, presidio quotidiano finché non è in produzione (FT chiuso, tempo riallocato totalmente qui)
 - Studio giuridico: 1.5-2h/giorno lun-ven, presidio costante
 - Gate espliciti prima del go-live (metriche pilot con padre, Phase 10 GBSoftware)
 
@@ -41,13 +41,14 @@ Portare il sistema agentico al primo go-live reale presso lo studio del padre en
 - [[KR1.2 — Metriche pilot fissate con padre]]
 - [[KR1.3 — Go-live studio padre]]
 
-## Objective 2 — Football Trading validato e in orbita
+## ~~Objective 2 — Football Trading validato e in orbita~~ (archiviato 2026-05-02)
 
-Chiudere il debug del paper trading e dimostrare profitto sostenuto prima della pausa estiva.
+> [!failure] Objective archiviato
+> Pilota Football Trading chiuso definitivamente il 2026-05-02 (sistema strutturalmente in perdita + disallineamento strategico). I tre KR sono chiusi senza target. Vedi [[Chiusura-Pilot-Football-Trading]].
 
-- [[KR2.1 — Paper trading debuggato]]
-- [[KR2.2 — Paper trading in profitto 30 giorni]]
-- [[KR2.3 — KPI metrics_analyzer chiariti con AI]]
+- [[KR2.1 — Paper trading debuggato]] — archiviato
+- [[KR2.2 — Paper trading in profitto 30 giorni]] — archiviato
+- [[KR2.3 — KPI metrics_analyzer chiariti con AI]] — archiviato
 
 ## Objective 3 — Fondamenta della transizione consolidate
 
@@ -72,6 +73,6 @@ Spostare il go-live e usare il buffer per **consolidare il layer Obsidian**. Il 
 
 - [[Strategia-Attuale]]
 - [[Identità]] · [[Valori-Fondamentali]]
-- [[Sistema-Agentico-Studio]] · [[Football-Trading]]
-- [[AIOS-Chiarire-Metriche-Pilot]] · [[AIOS-Verifica-Roadmap-Agenti]] · [[FT-Chiarire-KPI-Metrics-Analyzer]]
+- [[Sistema-Agentico-Studio]] · [[Chiusura-Pilot-Football-Trading]]
+- [[AIOS-Chiarire-Metriche-Pilot]] · [[AIOS-Verifica-Roadmap-Agenti]]
 - [[Monitoraggio-regolatorio-AI]]

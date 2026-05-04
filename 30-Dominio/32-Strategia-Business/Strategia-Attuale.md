@@ -1,7 +1,7 @@
 ---
 tipo: strategia
 creato: 2026-04-13
-aggiornato: 2026-04-20
+aggiornato: 2026-05-02
 stato: attivo
 tags:
   - strategia/transizione
@@ -29,11 +29,9 @@ La strategia non è una sequenza, è un'esecuzione in parallelo su quattro binar
 - **Fonti**: esperti accreditati del settore.
 - **Timeline**: nessuna scadenza dichiarata — attività continuativa.
 
-### 3. Due piloti in produzione
-- **[[Football-Trading]]** — pilota deliberato in produzione il 2026-04-12.
-- **[[Sistema-Agentico-Studio]]** — target go-live pilot studio del padre **~10 maggio 2026** (aggiornato 2026-04-13; era "fine aprile 2026", slittato per chiusura parallela del pilot Football Trading).
-
-Vedi sezione dedicata sotto per la logica operativa che li tiene insieme.
+### 3. Pilota in produzione
+- **[[Sistema-Agentico-Studio]]** — unico pilota attivo, bet strategico principale. Target go-live pilot studio del padre **~10 maggio 2026**.
+- ~~Football Trading~~ — chiuso definitivamente il 2026-05-02 (sistema strutturalmente in perdita + disallineamento strategico). Vedi [[Chiusura-Pilot-Football-Trading]].
 
 ### 4. Marketing & sales
 - **Obiettivo**: colmare il gap di competenze di vendita e posizionamento.
@@ -42,15 +40,7 @@ Vedi sezione dedicata sotto per la logica operativa che li tiene insieme.
 > [!warning] Debito di pianificazione
 > Il filone marketing/sales è l'unico senza timeline. È un rischio: se matura troppo tardi, i piloti validati resteranno non monetizzati.
 
-## I due piloti: logica operativa
-
-> [!tip] Principio guida
-> I due piloti non sono tematicamente collegati (Football Trading ≠ dominio studio). Il legame è **operativo-temporale**: sfruttare il tempo morto di raccolta dati di un pilota per lavorare sull'altro.
-
-### Football Trading — "in orbita"
-- Ha un **collo di bottiglia di data acquisition in produzione** molto più lungo del sistema agentico.
-- Una volta deployato, raccoglie dati autonomamente senza richiedere attenzione continua.
-- È stato finalizzato per primo proprio per metterlo in orbita e liberare tempo sul secondo.
+## Il pilota: logica operativa
 
 ### Sistema agentico per lo studio — **bet strategico principale**
 - Sistema di agenti operativi integrati per back-office e interfaccia clienti.
@@ -58,16 +48,15 @@ Vedi sezione dedicata sotto per la logica operativa che li tiene insieme.
 	- **B2C**: connettere studio e clienti in modo più efficace, veloce, preciso, chiaro — riducendo informazioni ambigue, errate o ritardate.
 	- **B2B**: vendibile ad altri studi dopo validazione interna.
 
-> [!question] Se dovessi dichiarare vinto UNO solo dei due piloti
-> Football Trading. Non per valore strategico intrinseco, ma per il **vincolo di reputazione** descritto sotto.
+> [!info] Storico: il pilota Football Trading
+> Lo schema originale prevedeva due piloti paralleli (FT "in orbita" + AIOS bet principale), legati operativamente dallo sfruttamento del tempo morto di raccolta dati. Il 2026-05-02 il pilota Football Trading è stato chiuso definitivamente: edge non monetizzabile su questo design + disallineamento strategico verso il dominio della consulenza. Tutto il tempo è ora riallocato su AIOS. Vedi [[Chiusura-Pilot-Football-Trading]].
 
 ## Il vincolo di reputazione (principio non negoziabile)
 
-Entrambi i piloti richiedono cold calling per la vendita. Ma i due cold calling **non sono equivalenti** dal punto di vista reputazionale:
+La vendita richiede cold calling. I diversi target del sistema agentico **non sono equivalenti** dal punto di vista reputazionale:
 
 | Vendita | Target | Impatto reputazionale |
 |---|---|---|
-| Football Trading | Clienti retail/privati | Nessun rischio — dominio separato dalla consulenza |
 | Sistema agentico **B2C** (clienti dello studio) | Clienti del consulente | Nessun rischio — sono nel mio ruolo di consulente che porta valore |
 | Sistema agentico **B2B** (altri studi) | Peer professionali | **Rischio reputazionale alto** — mi posiziona come venditore-di-software verso peer, non come consulente |
 
@@ -117,6 +106,6 @@ Due rischi di sistema (non operativi su singolo pilota):
 - [[Valori-Fondamentali]] — i valori che filtrano le scelte strategiche (in particolare velocità × efficacia)
 - [[OKR-Correnti]] — traduzione operativa di questa strategia
 - [[Crescita-Priorità-Correnti]] — cosa muove oggi
-- [[Football-Trading]] — pilota 1
-- [[Sistema-Agentico-Studio]] — pilota 2, bet principale
+- [[Sistema-Agentico-Studio]] — unico pilota attivo, bet principale
+- [[Chiusura-Pilot-Football-Trading]] — chiusura del pilota FT (2026-05-02)
 - [[Monitoraggio-regolatorio-AI]] — mitigazione rischio esogeno
